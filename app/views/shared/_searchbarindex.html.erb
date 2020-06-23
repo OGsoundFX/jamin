@@ -1,0 +1,50 @@
+<% music_genre = ["Acapella", "Accoustic", "Blues", "Classical", "Country", "Electronic", "Folk", "Funk", "Heavy Metal", "Hip Hop", "Jazz", "Latin", "Other", "Pop", "Reggae", "Rock", "World"] %>
+<% location = ["Berlin", "London", "Paris"] %>
+
+<div class="searchindex">
+  <div class="search-title">
+    Haven't found what you are looking for?
+  </div>
+  <%= simple_form_for :jam_session, url: jam_sessions_path, method: :get do |f| %>
+    <div class="container d-flex justify-content-between pr-0 pl-0">
+      <div class="index-search-field">
+        <%= f.input :instrument_id, collection: Instrument.all, required: false, prompt: "Instrument", label: false %>
+      </div>
+      <div class="index-search-field">
+        <%= f.input :location, collection: location, required: false, prompt: "Location", label: false %>
+      </div>
+      <div class="index-search-field">
+        <%= f.input :genre, collection: music_genre, required: false, prompt: "Genre", label: false %>
+      </div>
+      <div class="index-search-field">
+        <%= f.input :starts_at, required: false, input_html: {class: "TimePicker"}, label: false, :placeholder => 'Date Range' %>
+      </div>
+      <%= f.submit 'Search', class: "btn btn-primary btn-sm searchbtnindex" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="searchindex-phone">
+  <div class="search-title">
+    Haven't found what you are looking for?
+  </div>
+  <%= simple_form_for :jam_session, url: jam_sessions_path, method: :get do |f| %>
+    <div class="d-flex justify-content-between">
+      <div class="index-search-field-phone">
+        <%= f.input :instrument_id, collection: Instrument.all, required: false, prompt: "Instrument", label: false %>
+      </div>
+      <div class="index-search-field-phone">
+        <%= f.input :location, collection: location, required: false, prompt: "Location", label: false %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="index-search-field-phone">
+        <%= f.input :genre, collection: music_genre, required: false, prompt: "Genre", label: false %>
+      </div>
+      <div class="index-search-field-phone-date">
+        <%= f.input :starts_at, required: false, input_html: {class: "TimePicker"}, label: false, :placeholder => 'Date Range' %>
+      </div>
+    </div>
+    <%= f.submit 'Search', class: "btn btn-primary btn-sm searchbtnindex2" %>
+  <% end %>
+</div>
