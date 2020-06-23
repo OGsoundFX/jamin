@@ -1,0 +1,64 @@
+.searchindex {
+  border: solid #bbbbbb 1px;
+  border-radius: 4px;
+  padding: 0px 10px;
+  margin: 20px 0px;
+}
+
+.index-search-field {
+  width: 15vw;
+  padding: 0px 5px;
+}
+
+.index-search-field-end {
+  width: 15vw;
+  padding: 0px 5px;
+}
+
+.search-title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.form-control {
+  padding: 0px;
+  height: 25px;
+}
+
+
+$breakpoint-tablet: 768px;
+@media (min-width: $breakpoint-tablet) {
+  .searchindex-phone {
+    display: none;
+  }
+}
+
+
+$breakpoint-tablet: 767px;
+@media (max-width: $breakpoint-tablet) {
+
+  .searchindex {
+    display: none;
+  }
+
+  .searchindex-phone {
+    border: solid #bbbbbb 1px;
+    border-radius: 4px;
+    padding: 0px 30px;
+  }
+
+  .search-title {
+    font-size: 16px;
+  }
+
+  .index-search-field-phone {
+    width: 48%;
+  }
+
+  .index-search-field-phone-date {
+    width: 48%;
+  }
+
+}
