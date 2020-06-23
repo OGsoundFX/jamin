@@ -12,6 +12,9 @@
 }
 
 .navbar-jamin {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
   background-color: black !important;
   padding: 1em 1rem;
   align-items: center;
